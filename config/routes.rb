@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   # resource routes
   resources :users
+  resources :contacts, only: [:new, :index, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:create]
 

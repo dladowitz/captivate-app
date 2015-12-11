@@ -1,0 +1,9 @@
+.container
+  %table.mt100
+    %tr
+      %th First Name
+      %th Email
+    - @contacts.each do |contact|
+      %tr
+        %td= contact.firstname
+        %td= contact.lastname
