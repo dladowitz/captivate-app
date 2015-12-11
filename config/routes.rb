@@ -14,7 +14,10 @@ Rails.application.routes.draw do
 
   # resource routes
   resources :users
-  resources :contacts, only: [:new, :index, :create]
+  resources :contacts, only: [:new, :index, :create] do
+    resources :showing_trackings, only: [:index, :new, :create]
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:create]
 

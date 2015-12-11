@@ -4,9 +4,11 @@
 
   %table.mt50
     %tr
-      %th First Name
-      %th Email
+      %th.col-md-3 First Name
+      %th.col-md-3 Email
+      %th.col-md-3 Showings
     - @contacts.each do |contact|
       %tr
         %td= contact.firstname
         %td= contact.lastname
+        %td= link_to "view showings", contact_showing_trackings_path(contact), class: "text-danger"

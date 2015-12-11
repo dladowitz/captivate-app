@@ -1,0 +1,24 @@
+%main#main.site-main
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        -#validates errors div
+        = render "layouts/validation_errors", :model => @showing_tracking
+
+      .col-xs-6.col-xs-offset-3
+        %h1 Track a New showing
+        = form_for [@contact, @showing_tracking] do |f|
+          .form-group
+            = f.label :showing_street_address__c, class: "label-control"
+            = f.text_field :showing_street_address__c, class: "form-control"
+          .form-group
+            = f.label :showing_city__c, class: "label-control"
+            = f.text_field :showing_city__c, class: "form-control"
+          .form-group
+            = f.submit "Create", class: "btn btn-success"
+-#
+-#     -# .row.mt50
+-#     -#   .col-xs-4.col-xs-offset-4.text-left
+-#     -#     %i.fa.fa-envelope.mr10
+-#     -#     We promise never do anything uncool with your info
+-#     -#TODO strange issue with different versions of bootstrap or theme being used for btn-large on render vs redirect
