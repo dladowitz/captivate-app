@@ -14,6 +14,28 @@
           .form-group
             = f.label :showing_city__c, class: "label-control"
             = f.text_field :showing_city__c, class: "form-control"
+            .form-group
+            = f.label :showing_price__c, class: "label-control"
+            = f.number_field :showing_price__c, class: "form-control"
+            .form-group
+            = f.label :showing_square_footage__c, class: "label-control"
+            = f.number_field :showing_square_footage__c, class: "form-control"
+            .form-group
+            = f.label :showing_of_bedrooms__c, class: "label-control"
+            = f.number_field :showing_of_bedrooms__c, class: "form-control"
+            .form-group
+            = f.label :showing_of_bathrooms__c, class: "label-control"
+            = f.number_field :showing_of_bathrooms__c, class: "form-control"
+          .form-group
+            = f.label :showing_general_condition__c, class: "label-control"
+            = f.select :showing_general_condition__c, options_for_select([["Rating", ""], 1, 2, 3, 4, 5]), class: "form-control"
+          .form-group
+            = f.label :showing_neighborhood__c, class: "label-control"
+            = f.select :showing_general_condition__c, options_for_select([["Rating", ""], 1, 2, 3, 4, 5]), class: "form-control"
+          .form-group
+            = f.label :showing_commute__c, class: "label-control"
+            = f.select :showing_general_condition__c, options_for_select([["Rating", ""], 1, 2, 3, 4, 5]), class: "form-control"
+
           .form-group
             = f.submit "Create", class: "btn btn-success"
 -#
