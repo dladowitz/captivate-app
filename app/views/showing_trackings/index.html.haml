@@ -15,6 +15,10 @@
       %th.col-md-1 General Condition
       %th.col-md-1 Neighborhood
       %th.col-md-1 Commute
+      %th.col-md-1 Exterior
+      %th.col-md-1 Kitchen
+      %th.col-md-1 Notes
+
     - @showing_trackings.each do |showing_tracking|
       %tr
         %td= showing_tracking.showing_street_address__c
@@ -26,3 +30,6 @@
         %td= showing_tracking.showing_general_condition__c
         %td= showing_tracking.showing_neighborhood__c
         %td= showing_tracking.showing_commute__c
+        %td= showing_tracking.showing_exterior__c
+        %td= showing_tracking.showing_kitchen__c
+        %td= showing_tracking.showing_notes__c

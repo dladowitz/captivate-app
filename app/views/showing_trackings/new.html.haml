@@ -9,33 +9,41 @@
         %h1 Track a New showing
         = form_for [@contact, @showing_tracking] do |f|
           .form-group
-            = f.label :showing_street_address__c, class: "label-control"
+            = f.label :showing_street_address__c, "Street Address", class: "label-control"
             = f.text_field :showing_street_address__c, class: "form-control"
           .form-group
-            = f.label :showing_city__c, class: "label-control"
+            = f.label :showing_city__c, "City", class: "label-control"
             = f.text_field :showing_city__c, class: "form-control"
             .form-group
-            = f.label :showing_price__c, class: "label-control"
+            = f.label :showing_price__c, "Price", class: "label-control"
             = f.number_field :showing_price__c, class: "form-control"
             .form-group
-            = f.label :showing_square_footage__c, class: "label-control"
+            = f.label :showing_square_footage__c, "Sq Feet", class: "label-control"
             = f.number_field :showing_square_footage__c, class: "form-control"
             .form-group
-            = f.label :showing_of_bedrooms__c, class: "label-control"
+            = f.label :showing_of_bedrooms__c, "Num of Bedrooms", class: "label-control"
             = f.number_field :showing_of_bedrooms__c, class: "form-control"
             .form-group
-            = f.label :showing_of_bathrooms__c, class: "label-control"
+            = f.label :showing_of_bathrooms__c, "Num of Bathrooms", class: "label-control"
             = f.number_field :showing_of_bathrooms__c, class: "form-control"
           .form-group
-            = f.label :showing_general_condition__c, class: "label-control"
+            = f.label :showing_general_condition__c, "General Condition", class: "label-control"
             = f.select :showing_general_condition__c, options_for_select([["Rating", ""], 1, 2, 3, 4, 5]), class: "form-control"
           .form-group
-            = f.label :showing_neighborhood__c, class: "label-control"
+            = f.label :showing_neighborhood__c, "Neighborhood", class: "label-control"
             = f.select :showing_general_condition__c, options_for_select([["Rating", ""], 1, 2, 3, 4, 5]), class: "form-control"
           .form-group
-            = f.label :showing_commute__c, class: "label-control"
-            = f.select :showing_general_condition__c, options_for_select([["Rating", ""], 1, 2, 3, 4, 5]), class: "form-control"
-
+            = f.label :showing_commute__c, "Commute", class: "label-control"
+            = f.select :showing_commute__c, options_for_select([["Rating", ""], 1, 2, 3, 4, 5]), class: "form-control"
+          .form-group
+            = f.label :showing_exterior__c, "Exterior", class: "label-control"
+            = f.select :showing_exterior__c, options_for_select([["Rating", ""], 1, 2, 3, 4, 5]), class: "form-control"
+          .form-group
+            = f.label :showing_kitchen__c, "Kitchen", class: "label-control"
+            = f.select :showing_kitchen__c, options_for_select([["Rating", ""], 1, 2, 3, 4, 5]), class: "form-control"
+          .form-group
+            = f.label :showing_notes__c, "Notes", class: "label-control"
+            = f.text_area :showing_notes__c, class: "form-control"
           .form-group
             = f.submit "Create", class: "btn btn-success"
 -#
