@@ -1,28 +1,25 @@
-%main#main.site-main
-  .container
-    .row
-      .col-sm-4.col-sm-offset-4
-        -#validates errors div
-        = render "layouts/validation_errors", :model => @contact
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-7
+      .ibox.float-e-margins
+        -# .ibox-title
+        -#   %h3
+        -#     Basic form
+        .ibox-content
+          .row
+            .col-sm-6.b-r
+              %h3.m-t-none.m-b Create a Contact
+              -# %p Sign in today for more expirience.
 
-      .col-xs-4.col-xs-offset-4
-        %h1 Create a Contact
-
-        = form_for @contact do |f|
-          .form-group
-            = f.label :firstname, class: "label-control"
-            = f.text_field :firstname, class: "form-control"
-          .form-group
-            = f.label :lastname, class: "label-control"
-            = f.text_field :lastname, class: "form-control"
-          .form-group
-            = f.label :email, class: "label-control"
-            = f.text_field :email, class: "form-control"
-          .form-group
-            = f.submit "Create", class: "btn btn-success"
-
-    -# .row.mt50
-    -#   .col-xs-4.col-xs-offset-4.text-left
-    -#     %i.fa.fa-envelope.mr10
-    -#     We promise never do anything uncool with your info
-    -#TODO strange issue with different versions of bootstrap or theme being used for btn-large on render vs redirect
+              = form_for @contact do |f|
+                .form-group
+                  = f.label :firstname, "First Name"
+                  = f.text_field :firstname, class: "form-control", placeholder: "Jack"
+                .form-group
+                  = f.label :lastname, "Last Name"
+                  = f.text_field :lastname, class: "form-control", placeholder: "Burly"
+                .form-group
+                  = f.label :email, "Email"
+                  = f.text_field :email, class: "form-control", placeholder: "jburly@gmail.com"
+                .form-group
+                  = f.submit "Create", class: "btn btn-success"

@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
-    render layout: "guest_pages/guest_layout"
+    render layout: "contact_pages/contact_layout"
   end
 
   def create
