@@ -23,18 +23,24 @@
             %li
               %a{:href => ""} Logout
         .logo-element
-          IN+
-      %li{:class => is_active_controller('dashboards')}
+          Cap
+      %li{:class => is_active_controller('contacts')}
         %a{:href => ""}
-          %i.fa.fa-th-large
-          %span.nav-label Dashboards
+          %i.fa.fa-users
+          %span.nav-label Contacts
           %span.fa.arrow
-        %ul{:class => "nav nav-second-level collapse #{is_active_controller('dashboards')}"}
-          %li{:class => is_active_action('dashboard_1')}= link_to "Dashboard v.1", root_path
-          %li{:class => is_active_action('dashboard_2')}= link_to "Dashboard v.2", "dashboards_dashboard_2_path"
-          %li{:class => is_active_action('dashboard_3')}= link_to "Dashboard v.3", "dashboards_dashboard_3_path"
-          %li{:class => is_active_action('dashboard_4_1')}= link_to "Dashboard v.4", "dashboards_dashboard_4_1_path"
-          %li{:class => is_active_action('dashboard_5')}= link_to "Dashboard v.5", "dashboards_dashboard_5_path"
+        %ul{:class => "nav nav-second-level collapse #{is_active_controller('contacts')}"}
+          %li{:class => is_active_action('index')}= link_to "All Contacts", contacts_path
+          %li{:class => is_active_action('new')}= link_to "New Contact", new_contact_path
+
+      %li{:class => is_active_controller('showing_trackings')}
+        %a{:href => ""}
+          %i.fa.fa-bar-chart-o
+          %span.nav-label Tracking Showings
+          %span.fa.arrow
+        %ul{:class => "nav nav-second-level collapse #{is_active_controller('showing_trackings')}"}
+          %li{:class => is_active_action('index')}= link_to "All Showings", "#"
+          %li{:class => is_active_action('new')}= link_to "New Contact", "#"
       %li{:class => is_active_controller('layoutsoptions')}
         = link_to "layoutsoptions_index_path" do
           %i.fa.fa-diamond
