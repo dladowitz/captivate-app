@@ -2,15 +2,14 @@
   .row
     .col-lg-7
       .ibox.float-e-margins
-        -# .ibox-title
-        -#   %h3
-        -#     Basic form
+        .ibox-title
+          %h3
+            Create a Contact
         .ibox-content
           .row
-            .col-sm-6.b-r
-              %h3.m-t-none.m-b Create a Contact
+            .col-sm-10
+              -# %h3.m-t-none.m-b Create a Contact
               -# %p Sign in today for more expirience.
-
               = form_for @contact do |f|
                 .form-group
                   = f.label :firstname, "First Name"
@@ -22,4 +21,4 @@
                   = f.label :email, "Email"
                   = f.text_field :email, class: "form-control", placeholder: "jburly@gmail.com"
                 .form-group
-                  = f.submit "Create", class: "btn btn-success"
+                  = f.submit "Create", class: "btn btn-primary"

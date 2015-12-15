@@ -14,8 +14,11 @@
   %body
     / Wrapper
     #wrapper{:class => "#{params[:controller]}.#{params[:action]}"}
+      / Topbat
+      = render "layouts/topnavbar"
+
       / Navigation
-      -# = render "layouts/sidebar"
+      = render "layouts/sidebar"
 
       / Page wraper
       #page-wrapper{:class => "gray-bg #{@extra_class}"}
