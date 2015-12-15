@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root to: "landing_pages#landing"
+  root to: "landing#index"
 
   # custom routes
-  get    :landing,     to: "landing_pages#landing",      as: :landing
+  get    :landing,     to: "landing#index",              as: :landing
   get    :signin,      to: "sessions#new",               as: :signin
   get    :signup,      to: "users#new",                  as: :signup
 

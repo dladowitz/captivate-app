@@ -2,15 +2,11 @@ class ShowingTrackingsController < ApplicationController
   def index
     @contact = Contact.find params[:contact_id]
     @showing_trackings = @contact.showing_trackings
-
-    render layout: "guest_pages/guest_layout"
   end
 
   def new
     @contact = Contact.find params[:contact_id]
     @showing_tracking = @contact.showing_trackings.new
-
-    render layout: "guest_pages/guest_layout"
   end
 
 
@@ -21,7 +17,7 @@ class ShowingTrackingsController < ApplicationController
     if @showing_tracking.save
       redirect_to contact_showing_trackings_path(@contact)
     else
-      render :new, layout: "guest_pages/guest_layout"
+      render :new
     end
   end
 

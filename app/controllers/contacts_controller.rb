@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
-    render layout: "contact_pages/contact_layout"
   end
 
   def create
@@ -20,7 +19,6 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = Contact.all
-    render layout: "guest_pages/guest_layout"
   end
 
 

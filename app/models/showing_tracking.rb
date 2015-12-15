@@ -42,4 +42,5 @@ class ShowingTracking < ActiveRecord::Base
   self.table_name = 'salesforce.showing_tracking__c'
 
   belongs_to :contact, primary_key: "sfid", foreign_key: "contact_name__c"
+  # Note that since salesforece isn't connected in development this relationship doesn't work automatically. Need to add 'sfid' to the contact in dev.
 end
