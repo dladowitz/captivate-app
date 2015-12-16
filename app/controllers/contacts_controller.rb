@@ -34,7 +34,12 @@ class ContactsController < ApplicationController
     @contact.update contact_params
 
     if @contact.save
-      flash[:success] = "Awesome. You're account is all setup."
+      # Used when adding a password. Maybe rethink.
+      unless session[:id]
+        session[:id] = @contact.id
+      end
+
+      flash[:success] = "Awesome. You're all set."
       redirect_to contact_path(@contact)
     else
       flash[:danger] = "Hmmm, something has gone wrong."
