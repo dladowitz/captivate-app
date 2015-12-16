@@ -22,8 +22,13 @@
             %li.divider
             %li
               %a{:href => ""} Logout
+      - if current_user
         .logo-element
           = link_to contact_path(current_user) do
+            Cap
+      - else
+        .logo-element
+          = link_to "/" do
             Cap
       - if current_user
         %li{:class => is_active_controller('showing_trackings')}
@@ -32,8 +37,8 @@
             %span.nav-label Tracking Showings
             %span.fa.arrow
           %ul{:class => "nav nav-second-level collapse #{is_active_controller('showing_trackings')}"}
-            %li{:class => is_active_action('index')}= link_to "Past Showings", contact_showing_trackings_path(@contact)
-            %li{:class => is_active_action('new')}= link_to "Track A Showing", new_contact_showing_tracking_path(@contact)
+            %li{:class => is_active_action('index')}= link_to "Past Showings", contact_showing_trackings_path(current_user)
+            %li{:class => is_active_action('new')}= link_to "Track A Showing", new_contact_showing_tracking_path(current_user)
 
         %li{:class => is_active_controller('contacts')}
           %a{:href => ""}
