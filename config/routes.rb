@@ -19,12 +19,7 @@ Rails.application.routes.draw do
     resources :showing_trackings, only: [:index, :new, :create]
   end
 
-  resources :sessions, only: [:new, :create, :destroy] do
-    # get     :contact, to: "sessions#new_contact", as: :new_contact
-    # post    :contact, to: "sessions#create_contact", as: :create_contact
-    # delete  :contact, to: "sessions#destroy_contact", as: :delete_contact
-  end
-
+  resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
