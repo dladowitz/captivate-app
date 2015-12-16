@@ -5,7 +5,18 @@
         .ibox-title
           %h3
             = @contact.name
-
-          = link_to session_path(current_user), method: :delete do
-            Sign Out
-            %i.fa.fa-sign-out    
+        .ibox-content
+          %h4
+            Showings
+          %p
+            = link_to "Track A Showing", new_contact_showing_tracking_path(@contact), class: "btn btn-outline btn-primary"
+            = link_to "Past Showings", contact_showing_trackings_path(@contact), class: "btn btn-outline btn-success"
+          %h4
+            Profile
+          %p
+            = link_to "Update", "#", class: "btn btn-outline btn-primary"
+    
+          -# .row
+            -# .col-sm-10
+              -# %h3.m-t-none.m-b Create a Contact
+              -# %p Sign in today for more expirience.

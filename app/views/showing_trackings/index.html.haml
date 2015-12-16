@@ -1,35 +1,101 @@
-.container
-  -# .mt100
-  -#   = link_to "New Contact", new_contact_path, class: "btn btn-primary"
-  %h1 Past Showings
-  = link_to "Track New Showing", new_contact_showing_tracking_path(@contact), class: "btn btn-primary"
-
-  %table.mt50.table-striped
-    %tr
-      %th.col-md-3 Street
-      %th.col-md-3 City
-      %th.col-md-2 Price
-      %th.col-md-2 Sq Feet
-      %th.col-md-1 Bedrooms
-      %th.col-md-1 Bathrooms
-      %th.col-md-1 General Condition
-      %th.col-md-1 Neighborhood
-      %th.col-md-1 Commute
-      %th.col-md-1 Exterior
-      %th.col-md-1 Kitchen
-      %th.col-md-1 Notes
-
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
     - @showing_trackings.each do |showing_tracking|
-      %tr
-        %td= showing_tracking.showing_street_address__c
-        %td= showing_tracking.showing_city__c
-        %td= showing_tracking.showing_price__c
-        %td= showing_tracking.showing_square_footage__c
-        %td= showing_tracking.showing_of_bedrooms__c
-        %td= showing_tracking.showing_of_bathrooms__c
-        %td= showing_tracking.showing_general_condition__c
-        %td= showing_tracking.showing_neighborhood__c
-        %td= showing_tracking.showing_commute__c
-        %td= showing_tracking.showing_exterior__c
-        %td= showing_tracking.showing_kitchen__c
-        %td= showing_tracking.showing_notes__c
+      .col-lg-4.col-sm-12
+        .ibox.float-e-margins
+          .ibox-title
+            %h3
+              = showing_tracking.showing_street_address__c
+              ,
+              = showing_tracking.showing_city__c
+          .ibox-content
+            %h4 Basics
+            %table
+              %tr
+                %td.col-sm-3
+                  %strong Price
+                %td= number_to_currency showing_tracking.showing_price__c
+              %tr
+                %td.col-sm-3
+                  %strong Sq Feet
+                %td= showing_tracking.showing_square_footage__c
+              %tr
+                %td.col-sm-3
+                  %strong Beds
+                %td= showing_tracking.showing_of_bedrooms__c
+              %tr
+                %td.col-sm-3
+                  %strong Baths
+                %td= showing_tracking.showing_of_bathrooms__c
+              %tr
+                %td.col-sm-3
+                  %strong Sq Feet
+                %td= showing_tracking.showing_square_footage__c
+
+            - if showing_tracking.showing_general_condition__c
+              .mt20
+                %h4 General Condition
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_general_condition__c / 5 * 100)}%;"}
+
+            - if showing_tracking.showing_neighborhood__c
+              .mt20
+                %h4 Neighborhood
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_neighborhood__c / 5 * 100)}%;"}
+
+            - if showing_tracking.showing_commute__c
+              .mt20
+                %h4 Commute
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_commute__c / 5 * 100)}%;"}
+
+            - if showing_tracking.showing_exterior__c
+              .mt20
+                %h4 Exterior
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_exterior__c / 5 * 100)}%;"}
+
+            - if showing_tracking.showing_kitchen__c
+              .mt20
+                %h4 Kitchen
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_kitchen__c / 5 * 100)}%;"}
+
+
+
+-# .container
+-#   -# .mt100
+-#   -#   = link_to "New Contact", new_contact_path, class: "btn btn-primary"
+-#   %h1 Past Showings
+-#   = link_to "Track New Showing", new_contact_showing_tracking_path(@contact), class: "btn btn-primary"
+-#
+-#   %table.mt50.table-striped
+-#     %tr
+-#       %th.col-md-3 Street
+-#       %th.col-md-3 City
+-#       %th.col-md-2 Price
+-#       %th.col-md-2 Sq Feet
+-#       %th.col-md-1 Bedrooms
+-#       %th.col-md-1 Bathrooms
+-#       %th.col-md-1 General Condition
+-#       %th.col-md-1 Neighborhood
+-#       %th.col-md-1 Commute
+-#       %th.col-md-1 Exterior
+-#       %th.col-md-1 Kitchen
+-#       %th.col-md-1 Notes
+-#
+-#     - @showing_trackings.each do |showing_tracking|
+-#       %tr
+-#         %td= showing_tracking.showing_street_address__c
+-#         %td= showing_tracking.showing_city__c
+-#         %td= showing_tracking.showing_price__c
+-#         %td= showing_tracking.showing_square_footage__c
+-#         %td= showing_tracking.showing_of_bedrooms__c
+-#         %td= showing_tracking.showing_of_bathrooms__c
+-#         %td= showing_tracking.showing_general_condition__c
+-#         %td= showing_tracking.showing_neighborhood__c
+-#         %td= showing_tracking.showing_commute__c
+-#         %td= showing_tracking.showing_exterior__c
+-#         %td= showing_tracking.showing_kitchen__c
+-#         %td= showing_tracking.showing_notes__c
