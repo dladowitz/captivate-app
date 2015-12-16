@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   resources :users
   resources :contacts, only: [:new, :index, :create, :show, :edit, :update] do
     get :create_password, to: "contacts#create_password", as: :create_password
+
+    collection do
+      post 'email_lookup'
+    end
+
     resources :showing_trackings, only: [:index, :new, :create]
   end
 

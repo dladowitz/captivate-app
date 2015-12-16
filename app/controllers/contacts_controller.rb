@@ -3,6 +3,19 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
+  def email_lookup
+    # TODO Need to make sure email addresses come into saleforce as lowercase
+    @contact = Contact.find_by_email params[:contact][:email].downcase
+
+    if @contact
+      render :create_password
+    else
+      flash[:danger] = "Hmmm, that email isn't in our system."
+      @contact = Contact.new
+      render :new
+    end
+  end
+
   def create
     @contact = Contact.new contact_params
 
