@@ -15,7 +15,7 @@
             %i.fa.fa-sign-out
             Sign Out
       - else
-        - unless request.env['PATH_INFO'] == "/signin"
+        - unless request.env['PATH_INFO'] == "/signin" || request.env['PATH_INFO'] == "/sessions/new"
           %li
             = link_to new_session_path do
               %i.fa.fa-sign-out
