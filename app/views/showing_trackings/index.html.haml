@@ -14,19 +14,19 @@
               %tr
                 %td.col-sm-3
                   %strong Price
-                %td= number_to_currency showing_tracking.showing_price__c
+                %td= number_to_currency(showing_tracking.showing_price__c, precision: 0)
               %tr
                 %td.col-sm-3
                   %strong Sq Feet
-                %td= showing_tracking.showing_square_footage__c
+                %td= number_with_delimiter showing_tracking.showing_square_footage__c
               %tr
                 %td.col-sm-3
                   %strong Beds
-                %td= showing_tracking.showing_of_bedrooms__c
+                %td= number_with_precision(showing_tracking.showing_of_bedrooms__c, precision: 0)
               %tr
                 %td.col-sm-3
                   %strong Baths
-                %td= showing_tracking.showing_of_bathrooms__c
+                %td= number_with_precision(showing_tracking.showing_of_bathrooms__c, precision: 0)
 
             - if showing_tracking.showing_general_condition__c
               .mt20
@@ -62,6 +62,11 @@
                 %h4 Design Personality
                 .progress.progress-mini
                   .progress-bar{style: "width: #{(showing_tracking.showing_design_personality__c   / 5 * 100)}%;"}
+            - if showing_tracking.showing_home_layout__c
+              .mt20
+                %h4 Home Layout
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_home_layout__c   / 5 * 100)}%;"}
             - if showing_tracking.showing_land_scaping__c
               .mt20
                 %h4 Landscaping
