@@ -61,41 +61,27 @@
                 %h4 Kitchen
                 .progress.progress-mini
                   .progress-bar{style: "width: #{(showing_tracking.showing_kitchen__c / 5 * 100)}%;"}
-
-
-
--# .container
--#   -# .mt100
--#   -#   = link_to "New Contact", new_contact_path, class: "btn btn-primary"
--#   %h1 Past Showings
--#   = link_to "Track New Showing", new_contact_showing_tracking_path(@contact), class: "btn btn-primary"
--#
--#   %table.mt50.table-striped
--#     %tr
--#       %th.col-md-3 Street
--#       %th.col-md-3 City
--#       %th.col-md-2 Price
--#       %th.col-md-2 Sq Feet
--#       %th.col-md-1 Bedrooms
--#       %th.col-md-1 Bathrooms
--#       %th.col-md-1 General Condition
--#       %th.col-md-1 Neighborhood
--#       %th.col-md-1 Commute
--#       %th.col-md-1 Exterior
--#       %th.col-md-1 Kitchen
--#       %th.col-md-1 Notes
--#
--#     - @showing_trackings.each do |showing_tracking|
--#       %tr
--#         %td= showing_tracking.showing_street_address__c
--#         %td= showing_tracking.showing_city__c
--#         %td= showing_tracking.showing_price__c
--#         %td= showing_tracking.showing_square_footage__c
--#         %td= showing_tracking.showing_of_bedrooms__c
--#         %td= showing_tracking.showing_of_bathrooms__c
--#         %td= showing_tracking.showing_general_condition__c
--#         %td= showing_tracking.showing_neighborhood__c
--#         %td= showing_tracking.showing_commute__c
--#         %td= showing_tracking.showing_exterior__c
--#         %td= showing_tracking.showing_kitchen__c
--#         %td= showing_tracking.showing_notes__c
+            - if showing_tracking.showing_design_personality__c
+              .mt20
+                %h4 Design Personality
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_design_personality__c   / 5 * 100)}%;"}
+            - if showing_tracking.showing_land_scaping__c
+              .mt20
+                %h4 Landscaping
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_land_scaping__c/ 5 * 100)}%;"}
+            - if showing_tracking.showing_local_schools__c
+              .mt20
+                %h4 Local Schools
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_local_schools__c / 5 * 100)}%;"}
+            - if showing_tracking.showing_master_bedroom__c
+              .mt20
+                %h4 Master Bedroom
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_master_bedroom__c / 5 * 100)}%;"}
+            - if showing_tracking.showing_notes__c
+              .mt20
+                %h4 Notes
+                %p= showing_tracking.showing_notes__c

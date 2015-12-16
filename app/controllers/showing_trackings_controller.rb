@@ -24,7 +24,10 @@ class ShowingTrackingsController < ApplicationController
   private
 
   def showing_tracking_params
-    params.require(:showing_tracking).permit(:showing_street_address__c, :showing_city__c, :showing_price__c, :showing_square_footage__c, :showing_of_bedrooms__c, :showing_of_bathrooms__c, :showing_general_condition__c, :showing_neighborhood__c, :showing_commute__c, :showing_exterior__c, :showing_kitchen__c, :showing_notes__c)
+    params.require(:showing_tracking).permit(:showing_street_address__c, :showing_city__c, :showing_price__c, :showing_square_footage__c,
+                                             :showing_of_bedrooms__c, :showing_of_bathrooms__c, :showing_general_condition__c, :showing_neighborhood__c,
+                                             :showing_commute__c, :showing_exterior__c, :showing_kitchen__c, :showing_design_personality__c,
+                                             :showing_home_layout__c, :showing_land_scaping__c, :showing_local_schools, :showing_master_bedroom,
+                                             :showing_notes__c)
   end
-
 end

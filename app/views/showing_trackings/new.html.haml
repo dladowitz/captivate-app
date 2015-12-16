@@ -50,6 +50,21 @@
                   = f.label :showing_kitchen__c, "Kitchen"
                   = f.hidden_field :showing_kitchen__c, id: "kitchen"
                 .form-group
+                  = f.label :showing_design_personality__c, "Design Personality"
+                  = f.hidden_field :showing_design_personality__c, id: "design"
+                .form-group
+                  = f.label :showing_home_layout__c, "Home Layout"
+                  = f.hidden_field :showing_home_layout__c, id: "layout"
+                .form-group
+                  = f.label :showing_land_scaping__c, "Landscaping"
+                  = f.hidden_field :showing_land_scaping__c, id: "landscaping"
+                .form-group
+                  = f.label :showing_local_schools__c, "Local Schools"
+                  = f.hidden_field :showing_local_schools__c, id: "schools"
+                .form-group
+                  = f.label :showing_master_bedroom__c, "Master Bedroom"
+                  = f.hidden_field :showing_master_bedroom__c, id: "master"
+                .form-group
                   = f.label :showing_notes__c, "Notes"
                   = f.text_area :showing_notes__c, class: "form-control"
                 .form-group
@@ -63,6 +78,13 @@
       console.log("Showing Tracking Javascript Running");
 
       $("#general_condition").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+
+      $("#neighborhood").ionRangeSlider({
         min: 1,
         max: 5,
         grid: true,
@@ -90,7 +112,31 @@
         from: 3,
       });
 
-      $("#general_condition").ionRangeSlider({
+      $("#design").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+      $("#layout").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+      $("#landscaping").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+      $("#schools").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+      $("#master").ionRangeSlider({
         min: 1,
         max: 5,
         grid: true,
