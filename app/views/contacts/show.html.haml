@@ -1,0 +1,11 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-7
+      .ibox.float-e-margins
+        .ibox-title
+          %h3
+            = @contact.name
+
+          = link_to session_path(current_user), method: :delete do
+            Sign Out
+            %i.fa.fa-sign-out    

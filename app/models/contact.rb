@@ -27,5 +27,9 @@
 class Contact < ActiveRecord::Base
   self.table_name = 'salesforce.contact'
 
+  has_secure_password
+  validates :password, length: { minimum: 6 }, if: :password_digest_changed?
+
+
   has_many :showing_trackings, primary_key: "sfid", foreign_key: "contact_name__c"
 end

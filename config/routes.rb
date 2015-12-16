@@ -14,11 +14,17 @@ Rails.application.routes.draw do
 
   # resource routes
   resources :users
-  resources :contacts, only: [:new, :index, :create] do
+  resources :contacts, only: [:new, :index, :create, :show, :edit, :update] do
+    get :create_password, to: "contacts#create_password", as: :create_password
     resources :showing_trackings, only: [:index, :new, :create]
   end
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy] do
+    # get     :contact, to: "sessions#new_contact", as: :new_contact
+    # post    :contact, to: "sessions#create_contact", as: :create_contact
+    # delete  :contact, to: "sessions#destroy_contact", as: :delete_contact
+  end
+
   resources :password_resets, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.

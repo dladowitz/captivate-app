@@ -14,7 +14,16 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    User.find session[:id] if session[:id]
+    if session[:id]
+      user = User.find_by_id session[:id]
+
+      unless user
+        user = Contact.find session[:id] if session[:id]
+      end
+
+    user
+  end
+
   end
   helper_method :current_user  #makes available in view
 

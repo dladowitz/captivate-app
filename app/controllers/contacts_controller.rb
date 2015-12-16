@@ -21,10 +21,32 @@ class ContactsController < ApplicationController
     @contacts = Contact.all
   end
 
+  def show
+    @contact = Contact.find params[:id]
+  end
+
+  def create_password
+    @contact = Contact.find_by_sfid params[:contact_id]
+  end
+
+  def update
+    @contact = Contact.find params[:id]
+    @contact.update contact_params
+
+    if @contact.save
+      flash[:success] = "Awesome. You're account is all setup."
+      redirect_to contact_path(@contact)
+    else
+      flash[:danger] = "Hmmm, something has gone wrong."
+      render :create_password
+    end
+  end
+
+
 
   private
 
   def contact_params
-    params.require(:contact).permit(:firstname, :lastname, :email, :name)
+    params.require(:contact).permit(:firstname, :lastname, :email, :name, :password, :password_confirmation)
   end
 end

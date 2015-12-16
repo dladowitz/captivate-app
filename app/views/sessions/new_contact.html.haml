@@ -9,13 +9,13 @@
           .row
             .col-sm-10
 
-            = form_tag sessions_path do
+            = form_tag contact_sessions_path do
               .form-group
                 = label_tag :email
-                = email_field_tag :email, nil, class: "form-control", placeholder: "jburly@gmail.com"
+                = email_field_tag :email, class: "form-control"
               .form-group
                 = label_tag :password
-                = password_field_tag :password, nil, class: "form-control"
+                = password_field_tag :password, 12345, class: "form-control"
               = submit_tag "Sign In", class: "btn btn-success"
 
               #password_links.pull-right
