@@ -14,11 +14,21 @@ Rails.application.routes.draw do
 
   # resource routes
   resources :users
+
+  resources :finance_pages, only: [] do
+    collection do
+      get "topic_1"
+      get "topic_2"
+      get "topic_3"
+      get "topic_4"
+    end
+  end
+
   resources :contacts, only: [:new, :index, :create, :show, :edit, :update] do
     get :create_password, to: "contacts#create_password", as: :create_password
 
     collection do
-      post 'email_lookup'
+      post "email_lookup"
     end
 
     resources :showing_trackings, only: [:index, :new, :create]

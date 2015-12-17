@@ -30,6 +30,16 @@
         .logo-element
           = link_to "/" do
             Cap
+      %li{:class => is_active_controller('finances')}
+        %a{:href => ""}
+          %i.fa.fa-usd
+          %span.nav-label Finance Educator
+          %span.fa.arrow
+        %ul{:class => "nav nav-second-level collapse #{is_active_controller('finances')}"}
+          %li{:class => is_active_action('topic_1')}= link_to "Topic 1", topic_1_finance_pages_path
+          %li{:class => is_active_action('topic_2')}= link_to "Topic 2", "#"
+          %li{:class => is_active_action('topic_3')}= link_to "Topic 3", "#"
+          %li{:class => is_active_action('topic_4')}= link_to "Topic 4", "#"
       - if current_user
         %li{:class => is_active_controller('showing_trackings')}
           %a{:href => ""}
