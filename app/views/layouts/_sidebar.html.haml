@@ -36,10 +36,14 @@
           %span.nav-label Finance Educator
           %span.fa.arrow
         %ul{:class => "nav nav-second-level collapse #{is_active_controller('finances')}"}
-          %li{:class => is_active_action('topic_1')}= link_to "Topic 1", topic_1_finance_pages_path
-          %li{:class => is_active_action('topic_2')}= link_to "Topic 2", "#"
-          %li{:class => is_active_action('topic_3')}= link_to "Topic 3", "#"
-          %li{:class => is_active_action('topic_4')}= link_to "Topic 4", "#"
+          %li{:class => is_active_action('topic_1')}= link_to "Benefits", topic_1_finance_pages_path
+          %li{:class => is_active_action('topic_2')}= link_to "Qualifications", topic_2_finance_pages_path
+          %li{:class => is_active_action('topic_3')}= link_to "Realtor Advantage", topic_3_finance_pages_path
+          %li{:class => is_active_action('topic_4')}= link_to "Morgage Consultant", topic_4_finance_pages_path
+          %li{:class => is_active_action('topic_5')}= link_to "Property Search", topic_4_finance_pages_path
+          %li{:class => is_active_action('topic_6')}= link_to "Offer Process", topic_4_finance_pages_path
+          %li{:class => is_active_action('topic_7')}= link_to "Mortgage", topic_4_finance_pages_path
+          %li{:class => is_active_action('topic_8')}= link_to "Closing", topic_4_finance_pages_path
       - if current_user
         %li{:class => is_active_controller('showing_trackings')}
           %a{:href => ""}
