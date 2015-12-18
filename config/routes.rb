@@ -21,6 +21,10 @@ Rails.application.routes.draw do
       get "topic_2"
       get "topic_3"
       get "topic_4"
+      get "topic_5"
+      get "topic_6"
+      get "topic_7"
+      get "topic_8"
     end
   end
 

@@ -11,4 +11,16 @@ class FinancePagesController < ApplicationController
 
   def topic_4
   end
+
+  def topic_5
+  end
+
+  def topic_6
+  end
+
+  def topic_7
+  end
+
+  def topic_8
+  end
 end
